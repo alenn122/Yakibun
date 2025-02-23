@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", serif;
+    line-height: 1.5;
+    list-style: none;
+    scroll-behavior: smooth;
+    color: #bbbbbb;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+:root {
+    --main-color: #ab0000;
+    --second-color: #770000;
+    --border-color: #3D0000;
+    --bg-color: #070000;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+a:hover {
+    color: #bbbbbb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    color: var(--main-color);
+}
+
+span {
+    color: #bbbbbb;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.btn-main {
+    background-color: var(--second-color);
+    color: #bbbbbb;
+    transition: all 0.8s;
+}
+
+.btn-main2 {
+    border-color: var(--second-color);
+    color: #bbbbbb;
+    transition: all 0.8s;
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+}
+
+/* SECTION */
+section {
+    padding: 110px 0;
+}
+
+/* CUSTOM SCROLL BAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--second-color);
+    border-radius: 5px;
+    border: 2px solid #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
+/* NAVIGATION */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    transition: all 0.8s ease;
+}
+
+/* HEADER STICKY */
+header.sticky {
+    background-color: var(--bg-color);
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(37, 37, 37, 0.5);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bolder;
+    font-style: italic;
+    color: white;
+}
+
+.logo img {
+    width: 35px;
+    padding-bottom: 10px;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.nav-bar a {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.nav-bar a:hover {
+    background-color: #c50000;
+    border-radius: 10px;
+}
+
+#navmenu {
+    font-size: 3rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+/* RESPONSIVE NAV BAR */
+@media (max-width: 1060px) {
+    #navmenu {
+        display: initial;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    header.sticky {
+        padding: 30px 20px;
+    }
+
+    .nav-bar {
+        position: absolute;
+        top: -1000px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        background: var(--border-color);
+        transition: all 0.8s ease;
+        margin-top: 0 !important;
+    }
+
+    .nav-bar a {
+        display: block;
+        margin: 1rem;
+        border-left: 2px solid var(--main-color);
+    }
+
+    .nav-bar.open {
+        top: 100%;
+    }
+
+    .btn {
+        margin-bottom: 2rem;
+    }
+}
+
+/* HOME SECTION */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.854), rgba(29, 0, 0, 0.5)), url(images/home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ABOUT SECTION */
+#about img {
+    aspect-ratio: 16 / 9;
+}
+
+.bi-check {
+    font-size: larger;
+}
+
+/* MENU SECTION */
+.items {
+    border: 2px solid var(--border-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.items img {
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+}
+
+.items i {
+    font-size: x-large;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.fa-heart:hover {
+    color: var(--main-color);
+}
+
+.fa-circle-info:hover {
+    color: #003289;
+}
+
+/* MENU Nav pill */
+.nav .nav-link.active {
+    background-color: var(--main-color);
+}
+
+.nav .nav-link {
+    color: #bbbbbb;
+    background-color: var(--second-color);
+    margin: 10px;
+}
+
+/* RESERVATION SECTION */
+#reservation .form-control {
+    border-radius: 10px;
+}
+
+#reservation .form-control:focus {
+    border-color: var(--border-color);
+}
+
+#reservation input.form-control {
+    height: 50px;
+}
+
+/* BLOG SECTION */
+.blogs {
+    border: 2px solid var(--border-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.blogs img {
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+}
+
+/* FOOTER SECTION */
+footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.785)), url(images/bacon-burg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 20px 30px 20px;
+}
+
+.socials i {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transition: all 0.5s;
+}
+
+.socials i:hover {
+    color: var(--main-color);
+}
+
+.footer-bottom {
+    border-top: 2px solid var(--border-color);
+}
